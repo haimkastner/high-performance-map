@@ -13,6 +13,18 @@ namespace PlatformsPublisher
     /// </summary>
     public class PlatformsManager : IJsonify
     {
+        // Constant values for random properties
+        readonly static Angle HIGHST_LATITUDE = Angle.FromDegrees(36);
+        readonly static Angle LOWEST_LATITUDE = Angle.FromDegrees(31);
+        readonly static Angle HIGHST_LONGITUDE = Angle.FromDegrees(36);
+        readonly static Angle LOWEST_LONGITUDE = Angle.FromDegrees(30);
+        readonly static Speed MIN_SURFACE_SPEED = Speed.FromKilometersPerHour(100);
+        readonly static Speed MAX_SURFACE_SPEED = Speed.FromKilometersPerHour(500);
+        readonly static Speed MIN_AIRCRAFT_SPEED = Speed.FromKilometersPerHour(1000);
+        readonly static Speed MAX_AIRCRAFT_SPEED = Speed.FromKilometersPerHour(3500);
+        readonly static Length MIN_AIRCRAFT_HIGTH = Length.FromMeters(50);
+        readonly static Length MAX_AIRCRAFT_HIGTH = Length.FromMeters(1500);
+
         /// <summary>
         /// Used to randomized platforms position etc.
         /// </summary>
@@ -50,15 +62,15 @@ namespace PlatformsPublisher
                     platformType: platformType,
                     spacial: new Spacial(
                         position: new Position(
-                            latitude: Angle.FromDegrees(random.Next(32, 34)),
-                            longitude: Angle.FromDegrees(random.Next(33, 35)),
+                            latitude: Angle.FromDegrees(random.Next((int)LOWEST_LATITUDE.Degrees, (int)HIGHST_LATITUDE.Degrees) + random.NextDouble()),
+                            longitude: Angle.FromDegrees(random.Next((int)LOWEST_LONGITUDE.Degrees, (int)HIGHST_LONGITUDE.Degrees) + random.NextDouble()),
                             altitude: Length.FromMeters(platformType != PlatformType.Aircraft 
                             ? 0 
-                            : random.Next(0, 1500))),
+                            : random.Next((int)MIN_AIRCRAFT_HIGTH.Meters, (int)MAX_AIRCRAFT_HIGTH.Meters))),
                         movement: new Movement(
-                            speed: Speed.FromKilometersPerHour(platformType != PlatformType.Aircraft
-                             ? random.Next(0, 100)
-                             : random.Next(100, 1000)),
+                            speed: Speed.FromMetersPerSecond(platformType != PlatformType.Aircraft
+                             ? random.Next((int)MIN_SURFACE_SPEED.MetersPerSecond, (int)MAX_SURFACE_SPEED.MetersPerSecond)
+                             : random.Next((int)MIN_AIRCRAFT_SPEED.MetersPerSecond, (int)MAX_AIRCRAFT_SPEED.MetersPerSecond)),
                             course: Angle.FromDegrees(random.Next(0, 360))
                             )
                         )
