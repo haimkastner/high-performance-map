@@ -1,5 +1,5 @@
 # Purpose
-A PoC of implementing a client and server of a map with at least 1000 dynamic platforms with high-rate updates. Using MQTT (C# + JS) & React + Leaflet.
+A PoC of implementing a map with at least 1000 dynamic platforms with high-rate updates. Using MQTT (C# + JS) & React + Leaflet.
 
 ## How are we going to do it
 
