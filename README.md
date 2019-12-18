@@ -15,7 +15,7 @@ C# MQTT client using [MQTTnet](https://github.com/chkr1011/MQTTnet) library, and
 
 ### World Map
 
-React + TypeScript MQTT client using [async-mqtt](https://www.npmjs.com/package/async-mqtt), [Leaflet](https://leafletjs.com/) [Leaflet-react](https://react-leaflet.js.org/) for the map and [Material UI](https://material-ui.com/) for UI components. 
+React + TypeScript MQTT client using [async-mqtt](https://www.npmjs.com/package/async-mqtt), [Leaflet](https://leafletjs.com/) & [Leaflet-react](https://react-leaflet.js.org/) for the map and [Material UI](https://material-ui.com/) for UI components. 
 
 ## Run it
 
