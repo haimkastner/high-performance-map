@@ -40,7 +40,7 @@ listener 1884
 protocol websockets
 ```
 
-Then run in the command line `C:\Program Files\mosquitto>mosquitto.exe -c ./mosquitto.conf`;
+Then run in the command line `C:\Program Files\mosquitto>mosquitto.exe -c ./mosquitto.conf`
 
 After all make sure the broker is up and running.
 
