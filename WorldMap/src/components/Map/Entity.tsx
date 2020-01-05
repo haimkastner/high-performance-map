@@ -1,6 +1,6 @@
 import React from 'react'
 import { Popup, Circle } from 'react-leaflet';
-import { Platform } from '../models/models';
+import { Platform } from '../../models/models';
 
 // Declare the component properties
 interface Props {

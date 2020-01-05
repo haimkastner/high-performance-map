@@ -1,7 +1,7 @@
 import React from 'react'
 import { Map, TileLayer} from 'react-leaflet';
-import { Platform } from '../models/models';
-import { platformsFeed } from '../services/data-service';
+import { Platform } from '../../models/models';
+import { platformsFeed } from '../../services/data-service';
 import Entity from './Entity';
 
 // Import Leaflet style
@@ -48,7 +48,8 @@ class PeformanceMap extends React.Component<any, State> {
                 dragging={true}
                 animate={true}
                 easeLinearity={0.35}
-                style={{ width: '100%', height: 'calc(100vh - 64px)' }}>
+                style={{ width: '100vw', height: '100vh' }}
+                >
                 <TileLayer
                     url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 />
