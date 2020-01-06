@@ -4,9 +4,10 @@ import Box from "@material-ui/core/Box";
 
 /**
  * All the props included in the LayoutItem, with some optional properties for future use.
+ * These are the User-Input props, changeable what needed for the UI item.
  */
 interface Props {
-  children: JSX.Element[] | JSX.Element;
+  children: JSX.Element[] | JSX.Element; //the Component children in the LayoutItem.
   opacity: number;
   color: string;
   width: string;
@@ -19,10 +20,14 @@ interface Props {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    // The external whole layout, will be in a fixed @position in the ui.
+    // Will be in the above layer with the bigger zIndex. 
     layout: {
-      position: "fixed",
+      position: "fixed", 
       zIndex: 1000
     },
+    // The color of the new layout, will be placed BEHIND the layout's children.
+    //The color is absolute under the components of the layer.
     color: {
       position: "absolute",
       top: 0,
@@ -32,9 +37,12 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: 999,
       backgroundColor: "ffjhdifuhdsfu"
     },
+    // The child component in the layer, will be placed ABOVE it's Background-color box.
     item: {
       zIndex: 1000,
-      position: "relative"
+      position: "relative",
+      width: "100%",
+      height: "100%",
     }
   })
 );
@@ -62,17 +70,18 @@ export function LayoutItem(props: Props) {
   };
 
   const itemStyle = {
-    width: "100%",
-    height: "100%"
+  //for future custom design.
   };
 
   return (
-    <Box className={classes.layout} style={layoutStyle}>
-      <Box className={classes.item} style={itemStyle}>
-        {" "}
+    
+    <Box className={classes.layout} style={layoutStyle}>  {/** The complete new layer */}
+        {/** The color of the layout background*/}
+        <Box className={classes.color} style={colorStyle} />
+        {/** The children components of the layer */}
+        <Box className={classes.item} style={itemStyle}>
         {props.children}
       </Box>
-      <Box className={classes.color} style={colorStyle} />
     </Box>
   );
 }
