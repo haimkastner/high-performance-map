@@ -45,7 +45,7 @@ export function Bars() {
         height={"419px"}
         width={"60px"}
         left={0}
-        top={"30vh"}
+        top={"calc(50vh - 210px)"}
       >
         <MapButtons />
       </LayoutItem>
