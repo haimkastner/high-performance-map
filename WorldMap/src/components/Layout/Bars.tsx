@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 /**
- * The bars layout, @returns all the bars above our map. 
+ * The bars layout, 
  * The bars are returned with their unique css design by using @LayoutItem .
+ * @returns all the bars above our map. 
  */
 export function Bars() {
   const classes = useStyles();

@@ -21,9 +21,9 @@ interface Props {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     // The external whole layout, will be in a fixed @position in the ui.
-    // Will be in the above layer with the bigger zIndex. 
+    // Will be in the above layer with the bigger zIndex.
     layout: {
-      position: "fixed", 
+      position: "fixed",
       zIndex: 1000
     },
     // The color of the new layout, will be placed BEHIND the layout's children.
@@ -34,15 +34,14 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 0,
       width: "100%",
       height: "100%",
-      zIndex: 999,
-      backgroundColor: "ffjhdifuhdsfu"
+      zIndex: 999
     },
     // The child component in the layer, will be placed ABOVE it's Background-color box.
     item: {
       zIndex: 1000,
       position: "relative",
       width: "100%",
-      height: "100%",
+      height: "100%"
     }
   })
 );
@@ -70,16 +69,16 @@ export function LayoutItem(props: Props) {
   };
 
   const itemStyle = {
-  //for future custom design.
+    //for future custom design.
   };
 
   return (
-    
-    <Box className={classes.layout} style={layoutStyle}>  {/** The complete new layer */}
-        {/** The color of the layout background*/}
-        <Box className={classes.color} style={colorStyle} />
-        {/** The children components of the layer */}
-        <Box className={classes.item} style={itemStyle}>
+    <Box className={classes.layout} style={layoutStyle}>
+      {/** The complete new layer */}
+      {/** The color of the layout background*/}
+      <Box className={classes.color} style={colorStyle} />
+      {/** The children components of the layer */}
+      <Box className={classes.item} style={itemStyle}>
         {props.children}
       </Box>
     </Box>
