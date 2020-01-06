@@ -8,9 +8,10 @@ interface Props {
   color: string;
   width: string;
   height: string;
-  top?: number;
-  bottom?: number;
-  left: number;
+  top?: number | string;
+  bottom?: number | string;
+  left?: number | string;
+  right?: number | string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -25,7 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 0,
       width: "100%",
       height: "100%",
-      zIndex: 999
+      zIndex: 999,
+      backgroundColor: "ffjhdifuhdsfu"
     },
     item: {
       zIndex: 1000,
@@ -42,7 +44,8 @@ export function LayoutItem(props: Props) {
     height: props.height,
     top: props.top ?? "",
     bottom: props.bottom ?? "",
-    left: props.left
+    left: props.left ?? "",
+    right: props.right ?? ""
   };
 
   const colorStyle = {
@@ -50,9 +53,17 @@ export function LayoutItem(props: Props) {
     opacity: props.opacity
   };
 
+  const itemStyle = {
+    width: "100%",
+    height: "100%"
+  };
+
   return (
     <Box className={classes.layout} style={layoutStyle}>
-      <Box className={classes.item}>{props.children}</Box>
+      <Box className={classes.item} style={itemStyle}>
+        {" "}
+        {props.children}
+      </Box>
       <Box className={classes.color} style={colorStyle} />
     </Box>
   );
