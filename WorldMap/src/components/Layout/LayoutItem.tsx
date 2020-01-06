@@ -2,6 +2,9 @@ import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 
+/**
+ * All the props included in the LayoutItem, with some optional properties for future use.
+ */
 interface Props {
   children: JSX.Element[] | JSX.Element;
   opacity: number;
@@ -36,6 +39,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+/**
+ * A Wrapper Component for UI components, with many basic css properties.
+ * @param props are the props of the wrapped UI item, some are optional.
+ * @returns the item, with his css Wrapper as given in the @param props.
+ */
 export function LayoutItem(props: Props) {
   const classes = useStyles();
 

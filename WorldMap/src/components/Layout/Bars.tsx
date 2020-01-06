@@ -4,26 +4,21 @@ import { DownBar, MapButtons, UpBar, SideMenu, NavBar } from "./LayoutItems";
 import Box from "@material-ui/core/Box";
 import { LayoutItem } from "./LayoutItem";
 
+/**
+ * to customize design for ui components in the future.
+ */
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     bars: {
-      // width: "100%",
-      // height: "100%",
-      // width: "100vw",
-      // height: "100vh",
-      // position: "fixed",
-      // backgroundColor: "black"
-      // position: "fixed",
-      // top: 0,
-      // left: 0,
-      // bottom: 0,
-      // right: 0,
-      // overflow: "auto",
-      // backgroundColor: "lime"
+      //for future custom design 
     }
   })
 );
 
+/**
+ * The bars layout, @returns all the bars above our map. 
+ * The bars are returned with their unique css design by using @LayoutItem .
+ */
 export function Bars() {
   const classes = useStyles();
 
@@ -58,7 +53,7 @@ export function Bars() {
         right={0}
         top={"calc(50vh - 210px)"}
       >
-        <MapButtons />
+      <MapButtons />
       </LayoutItem>
       <LayoutItem
         opacity={0.5}
