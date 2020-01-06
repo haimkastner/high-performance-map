@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="2.5 -3.5 2.5 2.5 -3.5 2.5 -3.5 4.5 2.5 4.5 2.5 10.5 4.5 10.5 4.5 4.5 10.5 4.5 10.5 2.5 4.5 2.5 4.5 -3.5"></polygon>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="zoom-in">
+            <g id="Group-10">
+                <g id="Icon-/-Add-/-Filled" transform="translate(6.000000, 6.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Inactive" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                        <rect id="Rectangle" x="0" y="0" width="7" height="7"></rect>
+                    </g>
+                </g>
+                <path d="M9.5,0 C4.25339957,0 0,4.25339957 0,9.5 C0,14.7466004 4.25339957,19 9.5,19 C14.7466004,19 19,14.7466004 19,9.5 C19,4.25339957 14.7466004,0 9.5,0 Z M9.5,1.58333333 C13.8721496,1.58333333 17.4166667,5.12785043 17.4166667,9.5 C17.4166667,13.8721496 13.8721496,17.4166667 9.5,17.4166667 C5.12785043,17.4166667 1.58333333,13.8721496 1.58333333,9.5 C1.58333333,5.12785043 5.12785043,1.58333333 9.5,1.58333333 Z" id="Shape-Copy-2" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
