@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, TextField, Typography } from "@material-ui/core";
 import {
-  subsribeState,
-  unsubsribeState,
-  subscribeHookState
+  subscribeState,
+  unsubscribeState,
+  subscribeHookState,
+  
 } from "../../../services/stats-store";
 interface State {
   speed: string;
@@ -13,11 +14,23 @@ export function Direction() {
   const [speed, setSpeed] = useState(1);
   const [direction, setDirection] = useState(1);
 
-  let token: any;
+  let directionToken: any;
+  let speedToken: any;
   useEffect(() => {
-    token = subscribeHookState("direction", setDirection);
-    token = subscribeHookState("speed", setSpeed);
+    console.log("mount");
+    directionToken = subscribeHookState("direction", setDirection);
+    speedToken = subscribeHookState("speed", setSpeed);
   }, []);
+
+  useEffect(
+    () => () => {
+      console.log("unmounted");
+
+      unsubscribeState(directionToken);
+      unsubscribeState(speedToken);
+    },
+    []
+  );
 
   return (
     <Box>

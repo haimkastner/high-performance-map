@@ -2,7 +2,20 @@ import PubSub from 'pubsub-js';
 
 const dataStor = PubSub;
 
-export function subsribeState(state: string, component: React.Component): any {
+const currentState: { [key: string]: any } = {
+
+}
+
+export function subscribeState(state: string, component: React.Component): any {
+    const currState = getCurrentState(state);
+    if (currState !== undefined) {
+        // First update the current state
+        const newState: { [key: string]: string } = {};
+        newState[state] = currState;
+        component.setState(newState);
+    }
+
+
     return dataStor.subscribe(state, (msg: any, data: string) => {
         const newState: { [key: string]: string } = {};
         newState[state] = data;
@@ -11,15 +24,29 @@ export function subsribeState(state: string, component: React.Component): any {
 }
 
 export function subscribeHookState(state: string, hook: React.Dispatch<React.SetStateAction<any>>): any {
+    const currState = getCurrentState(state);
+    if (currState !== undefined) {
+        // First update the current state
+        hook(currState);
+    }
+
+
     return dataStor.subscribe(state, (msg: any, data: string) => {
         hook(data);
     });
 }
 
-export function unsubsribeState(token: string): any {
+export function unsubscribeState(token: string): any {
     dataStor.unsubscribe(token);
 }
 
 export function setSharedState(state: string, data: any): any {
+    currentState[state] = data;
     dataStor.publish(state, data);
 }
+
+export function getCurrentState(state: string): any {
+    return currentState[state];
+}
+
+export const storPubSub = dataStor;

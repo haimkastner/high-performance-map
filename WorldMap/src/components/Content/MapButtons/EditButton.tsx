@@ -1,36 +1,46 @@
 import React from "react";
 import { MapButtonIcon } from "./MapButtonIcon";
 import { Box, Button } from "@material-ui/core";
-import { setSharedState, subsribeState, unsubsribeState } from "../../../services/stats-store";
+import {
+  setSharedState,
+  subscribeState,
+  unsubscribeState
+} from "../../../services/stats-store";
 
 interface State {
   speed: string;
+  showMapButtonsMenu: boolean;
 }
 
 export class EditButton extends React.Component<any, State> {
   token: any;
 
   state: State = {
-    speed: "111"
+    speed: "111",
+    showMapButtonsMenu: false
   };
 
-  publish() {
-    setSharedState("speed", 99);
+  publish = () => {
+    setSharedState("mapButtonsMenuTop", "calc(50vh - 60px)");
+    setSharedState(
+      "showMapButtonsMenu",
+      this.state.showMapButtonsMenu ? false : true
+    );
     setSharedState("direction", 100);
   }
 
   componentDidMount() {
-    this.token = subsribeState("speed", this);
+    this.token = subscribeState("speed", this);
+    this.token = subscribeState("showMapButtonsMenu", this);
   }
   componentWillUnmount() {
-    unsubsribeState(this.token);
+    unsubscribeState(this.token);
   }
 
   render() {
     return (
       <Box>
         <Button onClick={this.publish}>
-          {this.state.speed}
           <MapButtonIcon
             imageName={"display-copy-shape-2@2x.png"}
           ></MapButtonIcon>

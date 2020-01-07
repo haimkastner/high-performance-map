@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { DownBar, MapButtons, UpBar, SideMenu, NavBar } from "./LayoutItems";
 import Box from "@material-ui/core/Box";
 import { LayoutItem } from "./LayoutItem";
+import { MapButtonsMenu } from "./LayoutItems/MapButtonsMenu";
+import { subscribeHookState } from "../../services/stats-store";
 
 /**
  * to customize design for ui components in the future.
@@ -10,18 +12,27 @@ import { LayoutItem } from "./LayoutItem";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     bars: {
-      //for future custom design 
+      //for future custom design
     }
   })
 );
 
 /**
- * The bars layout, 
+ * The bars layout,
  * The bars are returned with their unique css design by using @LayoutItem .
- * @returns all the bars above our map. 
+ * @returns all the bars above our map.
  */
 export function Bars() {
   const classes = useStyles();
+  const [mapButtonsMenuTop, setMapButtonsMenuTop] = useState(
+    "calc(50vh - 210px)"
+  );
+  const [showMapButtonsMenu, setShowMapButtonsMenu] = useState(false);
+
+  useEffect(() => {
+    subscribeHookState("mapButtonsMenuTop", setMapButtonsMenuTop);
+    subscribeHookState("showMapButtonsMenu", setShowMapButtonsMenu);
+  }, []);
 
   return (
     <Box className={classes.bars}>
@@ -45,6 +56,20 @@ export function Bars() {
       >
         <MapButtons />
       </LayoutItem>
+      {showMapButtonsMenu ? (
+        <LayoutItem
+          opacity={0.5}
+          color={"red"}
+          height={"500px"}
+          width={"400px"}
+          left={60}
+          top={mapButtonsMenuTop}
+        >
+          <MapButtonsMenu></MapButtonsMenu>
+        </LayoutItem>
+      ) : (
+        <Box />
+      )}
       <LayoutItem
         opacity={0.5}
         // color={"transparent"}
@@ -54,7 +79,7 @@ export function Bars() {
         right={0}
         top={"calc(50vh - 210px)"}
       >
-      <MapButtons />
+        <MapButtons />
       </LayoutItem>
       <LayoutItem
         opacity={0.5}

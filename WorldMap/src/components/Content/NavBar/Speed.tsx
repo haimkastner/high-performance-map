@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, TextField, Typography } from "@material-ui/core";
-import { subsribeState, unsubsribeState, setSharedState } from "../../../services/stats-store";
+import { subscribeState, unsubscribeState, setSharedState } from "../../../services/stats-store";
 interface State {
   speed: string;
 }
@@ -13,14 +13,14 @@ export class Speed extends React.Component<any, State> {
   };
 
   componentDidMount() {
-    this.token = subsribeState("speed", this);
+    this.token = subscribeState("speed", this);
 
     setTimeout(() =>{
         setSharedState('speed', 457286278);
     }, 5000);
   }
   componentWillUnmount() {
-    unsubsribeState(this.token);
+    unsubscribeState(this.token);
   }
   render() {
     return (

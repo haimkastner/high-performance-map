@@ -42,7 +42,7 @@ class PeformanceMap extends React.Component<any, State> {
                 center={[32, 35]}
                 zoom={6}
                 attributionControl={true}
-                zoomControl={true}
+                zoomControl={false}
                 doubleClickZoom={true}
                 scrollWheelZoom={true}
                 dragging={true}
