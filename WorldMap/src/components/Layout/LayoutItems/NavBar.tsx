@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Styles/NavBar.module.css";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, TextField, MenuItem } from "@material-ui/core";
 import { NavBarItem } from "../../Content/NavBar/NavBarItem";
 import { Platform } from "../../../models/models";
 import { subscribeState, unsubscribeState } from "../../../services/stats-store";
@@ -28,6 +28,33 @@ interface State {
   selectedPlatform: Platform;
 }
 export class NavBar extends React.Component<any, State> {
+  //  speedType = [
+  //   {
+  //     value: 'קשר',
+  //     label: 'קשר',
+  //   },
+  //   {
+  //     value: 'מייל',
+  //     label: 'מייל',
+  //   },
+  //   {
+  //     value: 'קסטנר',
+  //     label: 'קסטנר',
+  //   },
+  // ];
+
+  // constructor(props : any) {
+  //   super(props);
+  //   this.speedType = [{
+  //     value: 'קשר',
+  //     label: 'קשר',
+  //   }]
+  //     };
+
+
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   this.setState({speedType: this.speedType.values[1]});
+  // }
   state: State = {
     selectedPlatform: {
       ID: -1,
@@ -55,7 +82,7 @@ export class NavBar extends React.Component<any, State> {
     unsubscribeState(this.selectedPlatformToken);
   }
   
-  navItemHeight = "66px";
+  navItemHeight = "42px";
   navItemsPaddingFactor = 10;
 
   navDirectionWidth = 100;
@@ -93,6 +120,21 @@ export class NavBar extends React.Component<any, State> {
     alignItems: undefined
   };
 
+//   const textbox =   <TextField
+//   id="standard-select-currency"
+//   select
+//   label="Select"
+//   value={speedType}
+//   onChange={handleChange}
+//   helperText="Please select your currency"
+// >
+//   {/* {speedType.map(option => (
+//     <MenuItem key={option.value} value={option.value}>
+//       {option.label}
+//     </MenuItem>
+//   ))} */}
+//   </TextField>;
+
   render() {
     return (
       <Grid
@@ -119,6 +161,7 @@ export class NavBar extends React.Component<any, State> {
             value={this.state.selectedPlatform.Spacial.Movement.Speed}
             height={this.navItemHeight}
             width={this.navSpeedWidth}
+            // children={this.textbox}
           ></NavBarItem>
         </Grid>
         <Grid

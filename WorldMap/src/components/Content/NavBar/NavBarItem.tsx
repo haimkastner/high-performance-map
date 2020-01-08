@@ -7,10 +7,13 @@ import {
   makeStyles,
   Theme,
   createStyles,
-  Grid
+  Grid,
+  MenuItem,
+  TextFieldProps
 } from "@material-ui/core";
 
 interface Props {
+  children? : JSX.Element;
   width: number | string;
   height: number | string;
   name: string;
@@ -19,9 +22,22 @@ interface Props {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    navItem: {
-      backgroundColor: "white",
-      opacity: 0.7
+    navItemInput: {
+      color: '#FFFFFF',	
+      borderStyle: 'solid',
+      borderColor : "rgba(255, 255, 255, 0.5)",
+      borderWidth: 1,
+      opacity: 0.6,
+      backgroundColor: "#1D1D1D",
+      fontFamily: "Assistant",
+      boxSizing : "border-box",
+      textAlign : "center",
+    },
+    navItemName: {
+      color: '#FFFFFF',	
+      fontFamily: "Assistant",
+      fontSize: 16,
+      fontWeight: 600,
     }
   })
 );
@@ -37,14 +53,13 @@ export function NavBarItem(props: Props) {
   return (
     <Grid
       container
-      direction="column"
+      direction="row"
       justify="space-around"
       alignItems="center"
-      className={classes.navItem}
-      style={navItemStyle}
+     style={navItemStyle}
     >
-      <Typography>{props.name}</Typography>
-      <Typography>{props.value.toString()}</Typography>
+      <Typography className={classes.navItemName} >{props.name}</Typography>
+      <Typography className={classes.navItemInput} style={navItemStyle}>  {props.value.toString()}</Typography>
     </Grid>
   );
 }
