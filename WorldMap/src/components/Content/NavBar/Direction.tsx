@@ -3,40 +3,34 @@ import { Box, Button, TextField, Typography } from "@material-ui/core";
 import {
   subscribeState,
   unsubscribeState,
-  subscribeHookState,
-  
+  subscribeHookState
 } from "../../../services/stats-store";
+import { Platform } from "../../../models/models";
 interface State {
   speed: string;
 }
 
 export function Direction() {
-  const [speed, setSpeed] = useState(1);
-  const [direction, setDirection] = useState(1);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform>();
 
-  let directionToken: any;
-  let speedToken: any;
+  let selectedPlatformToken: any;
   useEffect(() => {
-    console.log("mount");
-    directionToken = subscribeHookState("direction", setDirection);
-    speedToken = subscribeHookState("speed", setSpeed);
+    selectedPlatformToken = subscribeHookState(
+      "selectedPlatform",
+      setSelectedPlatform
+    );
   }, []);
 
   useEffect(
     () => () => {
-      console.log("unmounted");
-
-      unsubscribeState(directionToken);
-      unsubscribeState(speedToken);
+      unsubscribeState(selectedPlatformToken);
     },
     []
   );
 
   return (
     <Box>
-      <Typography variant="h2" gutterBottom>
-        function {direction} {speed}
-      </Typography>
+      
     </Box>
   );
 }

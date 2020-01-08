@@ -21,7 +21,7 @@ export class EditButton extends React.Component<any, State> {
   };
 
   publish = () => {
-    setSharedState("mapButtonsMenuTop", "calc(50vh - 60px)");
+    setSharedState("mapButtonsMenuCenterDis", -60);
     setSharedState(
       "showMapButtonsMenu",
       this.state.showMapButtonsMenu ? false : true

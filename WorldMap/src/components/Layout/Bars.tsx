@@ -24,14 +24,16 @@ const useStyles = makeStyles((theme: Theme) =>
  */
 export function Bars() {
   const classes = useStyles();
-  const [mapButtonsMenuTop, setMapButtonsMenuTop] = useState(
+  const [mapButtonsMenuCenterDis, setMapButtonsMenuCenterDis] = useState(
     "calc(50vh - 210px)"
   );
   const [showMapButtonsMenu, setShowMapButtonsMenu] = useState(false);
+  const [showNavBar, setShowNavBar] = useState(true);
 
   useEffect(() => {
-    subscribeHookState("mapButtonsMenuTop", setMapButtonsMenuTop);
+    subscribeHookState("mapButtonsMenuCenterDis", setMapButtonsMenuCenterDis);
     subscribeHookState("showMapButtonsMenu", setShowMapButtonsMenu);
+    subscribeHookState("showNavBar", setShowNavBar);
   }, []);
 
   return (
@@ -63,7 +65,7 @@ export function Bars() {
           height={"500px"}
           width={"400px"}
           left={60}
-          top={mapButtonsMenuTop}
+          top={`calc(50vh + ${mapButtonsMenuCenterDis}px)`}
         >
           <MapButtonsMenu></MapButtonsMenu>
         </LayoutItem>
@@ -81,16 +83,17 @@ export function Bars() {
       >
         <MapButtons />
       </LayoutItem>
-      <LayoutItem
+      {showNavBar ? <LayoutItem
         opacity={0.5}
-        color={"black"}
-        height={"120px"}
+        color={"transparent"}
+        height={"66px"}
         width={"1000px"}
         right={"calc(50vw - 500px)"}
         top={90}
       >
         <NavBar />
       </LayoutItem>
+      : <Box/>}
       <LayoutItem
         opacity={0.5}
         color={"#016976"}
