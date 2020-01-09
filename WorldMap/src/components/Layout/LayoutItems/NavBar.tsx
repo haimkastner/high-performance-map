@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Styles/NavBar.module.css";
 import { Box, Grid, TextField, MenuItem } from "@material-ui/core";
 import { NavBarItem } from "../../Content/NavBar/NavBarItem";
 import { Platform } from "../../../models/models";
