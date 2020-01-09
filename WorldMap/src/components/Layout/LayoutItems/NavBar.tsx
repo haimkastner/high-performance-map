@@ -152,13 +152,13 @@ export class NavBar extends React.Component<any, State> {
         >
           <NavBarItem
             name="כיוון הפלגה"
-            value={this.state.selectedPlatform.Spacial.Movement.Course}
+            value={this.state.selectedPlatform.Spacial.Position.Latitude}
             height={this.navItemHeight}
             width={this.navDirectionWidth}
           ></NavBarItem>
           <NavBarItem
             name="מהירות"
-            value={this.state.selectedPlatform.Spacial.Movement.Speed}
+            value={this.state.selectedPlatform.Spacial.Position.Longitude}
             height={this.navItemHeight}
             width={this.navSpeedWidth}
             // children={this.textbox}

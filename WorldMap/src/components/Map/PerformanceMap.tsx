@@ -21,24 +21,39 @@ import {
 } from "./raw-map";
 // Import Leaflet style
 import "leaflet/dist/leaflet.css";
+import { subscribeState, unsubscribeState, setSharedState } from "../../services/stats-store";
 
 // Declare the component states
 interface State {
   platforms: Platform[];
+  selectedPlatform : Platform | null;
 }
 
 class PerformanceMap extends React.Component<any, State> {
   state: State = {
-    platforms: []
+    platforms: [],
+    selectedPlatform : null
   };
 
+  selectedPlatformToken : any;
+  
+  componentWillUnmount() {
+    unsubscribeState(this.selectedPlatformToken);
+  }
+
   componentDidMount() {
+    this.selectedPlatformToken = subscribeState("selectedPlatform", this);
+
     platformsFeed.subscribe(newPlatforms => {
       // Clean up the platform array
       this.state.platforms.splice(0, this.state.platforms.length);
 
       // Add each platform to the array
       for (const p of newPlatforms) {
+
+        if(this.state.selectedPlatform && p.ID === this.state.selectedPlatform.ID){
+          setSharedState('selectedPlatform', p);
+        }
         this.state.platforms.push(p);
       }
 
