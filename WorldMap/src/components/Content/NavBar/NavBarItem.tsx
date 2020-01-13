@@ -58,8 +58,8 @@ export function NavBarItem(props: Props) {
       alignItems="center"
      style={navItemStyle}
     >
-      <Typography className={classes.navItemName} >{props.name}</Typography>
-      <Typography className={classes.navItemInput} style={navItemStyle}>  {props.value.toString()}</Typography>
+      <Typography id="name" className={classes.navItemName} >{props.name}</Typography>
+      <Typography id="value" className={classes.navItemInput} style={navItemStyle}>{props.value.toString()}</Typography>
     </Grid>
   );
 }
