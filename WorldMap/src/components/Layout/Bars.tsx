@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { DownBar, MapButtons, UpBar, SideMenu, NavBar } from "./LayoutItems";
-import Box from "@material-ui/core/Box";
-import { LayoutItem } from "./LayoutItem";
-import { MapButtonsMenu } from "./LayoutItems/MapButtonsMenu";
-import { subscribeHookState } from "../../services/stats-store";
+import Box from '@material-ui/core/Box';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import React, { useEffect, useState } from 'react';
+import { subscribeHookState } from '../../services/stats-store';
+import { LayoutItem } from './LayoutItem';
+import { DownBar, MapButtons, NavBar, UpBar } from './LayoutItems';
+import { MapButtonsMenu } from './LayoutItems/MapButtonsMenu';
 
 /**
  * to customize design for ui components in the future.
@@ -12,9 +12,9 @@ import { subscribeHookState } from "../../services/stats-store";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     bars: {
-      //for future custom design
-    }
-  })
+      // for future custom design
+    },
+  }),
 );
 
 /**
@@ -24,46 +24,30 @@ const useStyles = makeStyles((theme: Theme) =>
  */
 export function Bars() {
   const classes = useStyles();
-  const [mapButtonsMenuCenterDis, setMapButtonsMenuCenterDis] = useState(
-    "calc(50vh - 210px)"
-  );
+  const [mapButtonsMenuCenterDis, setMapButtonsMenuCenterDis] = useState('calc(50vh - 210px)');
   const [showMapButtonsMenu, setShowMapButtonsMenu] = useState(false);
-  const [showNavBar, setShowNavBar] = useState(true);
+  const [showNavBar, setShowNavBar] = useState(false);
 
   useEffect(() => {
-    subscribeHookState("mapButtonsMenuCenterDis", setMapButtonsMenuCenterDis);
-    subscribeHookState("showMapButtonsMenu", setShowMapButtonsMenu);
-    subscribeHookState("showNavBar", setShowNavBar);
+    subscribeHookState('mapButtonsMenuCenterDis', setMapButtonsMenuCenterDis);
+    subscribeHookState('showMapButtonsMenu', setShowMapButtonsMenu);
+    subscribeHookState('showNavBar', setShowNavBar);
   }, []);
 
   return (
     <Box className={classes.bars}>
-      <LayoutItem
-        opacity={0.5}
-        color={"#016976"}
-        height={"41px"}
-        top={0}
-        width={"100vw"}
-        left={0}
-      >
+      <LayoutItem opacity={0.5} color={'#016976'} height={'41px'} top={0} width={'100vw'} left={0}>
         <UpBar />
       </LayoutItem>
-      <LayoutItem
-        opacity={0.5}
-        color={"#016976"}
-        height={"419px"}
-        width={"60px"}
-        left={0}
-        top={"calc(50vh - 210px)"}
-      >
+      <LayoutItem opacity={0.5} color={'#016976'} height={'419px'} width={'60px'} left={0} top={'calc(50vh - 210px)'}>
         <MapButtons />
       </LayoutItem>
       {showMapButtonsMenu ? (
         <LayoutItem
           opacity={0.5}
-          color={"red"}
-          height={"500px"}
-          width={"400px"}
+          color={'red'}
+          height={'500px'}
+          width={'400px'}
           left={60}
           top={`calc(50vh + ${mapButtonsMenuCenterDis}px)`}
         >
@@ -75,33 +59,29 @@ export function Bars() {
       <LayoutItem
         opacity={0.5}
         // color={"transparent"}
-        color={"#016976"}
-        height={"419px"}
-        width={"60px"}
+        color={'#016976'}
+        height={'419px'}
+        width={'60px'}
         right={0}
-        top={"calc(50vh - 210px)"}
+        top={'calc(50vh - 210px)'}
       >
         <MapButtons />
       </LayoutItem>
-      {showNavBar ? <LayoutItem
-        opacity={0.5}
-        color={"transparent"}
-        height={"66px"}
-        width={"1000px"}
-        right={"calc(50vw - 500px)"}
-        top={90}
-      >
-        <NavBar />
-      </LayoutItem>
-      : <Box/>}
-      <LayoutItem
-        opacity={0.5}
-        color={"#016976"}
-        height={"41"}
-        bottom={0}
-        width={"100vw"}
-        left={0}
-      >
+      {showNavBar ? (
+        <LayoutItem
+          opacity={0.5}
+          color={'transparent'}
+          height={'66px'}
+          width={'1000px'}
+          right={'calc(50vw - 500px)'}
+          top={90}
+        >
+          <NavBar />
+        </LayoutItem>
+      ) : (
+        <Box />
+      )}
+      <LayoutItem opacity={0.5} color={'#016976'} height={'41'} bottom={0} width={'100vw'} left={0}>
         <DownBar />
       </LayoutItem>
     </Box>
