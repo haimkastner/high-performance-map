@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutItem Component matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-9 makeStyles-layout-1"
+  id="container"
+  style={
+    Object {
+      "bottom": "",
+      "height": "3",
+      "left": "",
+      "right": "",
+      "top": "",
+      "width": "3",
+    }
+  }
+>
+  <div
+    className="MuiBox-root MuiBox-root-10 makeStyles-color-2"
+    id="background"
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "opacity": 1,
+      }
+    }
+  />
+  <div
+    className="MuiBox-root MuiBox-root-11 makeStyles-item-3"
+    id="content-box"
+    style={Object {}}
+  >
+    <div
+      id="test"
+    />
+  </div>
+</div>
+`;

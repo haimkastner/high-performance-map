@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditButton Component matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-37"
+>
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-text"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiButton-label"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-70"
+      >
+        <img
+          height={25}
+          src="display-copy-shape-2@2x.png"
+          width={25}
+        />
+      </div>
+    </span>
+  </button>
+</div>
+`;

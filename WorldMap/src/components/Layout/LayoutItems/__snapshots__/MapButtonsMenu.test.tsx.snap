@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapButtonsMenu Component matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-4"
+>
+  I am the MapButtonsMenu
+</div>
+`;

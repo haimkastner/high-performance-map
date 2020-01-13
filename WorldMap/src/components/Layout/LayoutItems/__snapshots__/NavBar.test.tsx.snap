@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Component matches the snapshot 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-justify-xs-space-between"
+    style={
+      Object {
+        "width": 242,
+      }
+    }
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 100,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        כיוון ההפלגה
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 100,
+          }
+        }
+      >
+        NaN
+      </p>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 132,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        מהירות
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 132,
+          }
+        }
+      >
+        NaN
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-justify-xs-space-between"
+    style={
+      Object {
+        "width": 289,
+      }
+    }
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 120,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        כיוון מספינתי
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 120,
+          }
+        }
+      >
+        -1
+      </p>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 159,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        טווח מספינתי
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 159,
+          }
+        }
+      >
+        -1
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-justify-xs-space-between"
+    style={
+      Object {
+        "width": 291,
+      }
+    }
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 161,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        גובה/עומק
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 161,
+          }
+        }
+      >
+        NaN
+      </p>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      style={
+        Object {
+          "height": "42px",
+          "width": 120,
+        }
+      }
+    >
+      <p
+        className="MuiTypography-root makeStyles-navItemName-240 MuiTypography-body1"
+        id="name"
+      >
+        הגדרות
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-navItemInput-239 MuiTypography-body1"
+        id="value"
+        style={
+          Object {
+            "height": "42px",
+            "width": 120,
+          }
+        }
+      >
+        ?
+      </p>
+    </div>
+  </div>
+</div>
+`;

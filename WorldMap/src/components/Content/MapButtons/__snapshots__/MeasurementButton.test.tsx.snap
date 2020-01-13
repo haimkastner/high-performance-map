@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MeasurementButton Component matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-4"
+>
+  <img
+    height={25}
+    src="adding-copy-shape-3@2x.png"
+    width={25}
+  />
+</div>
+`;

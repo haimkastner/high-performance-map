@@ -1,0 +1,416 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bar Component matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-177 makeStyles-bars-175"
+>
+  <div
+    className="MuiBox-root MuiBox-root-181 makeStyles-layout-178"
+    id="container"
+    style={
+      Object {
+        "bottom": "",
+        "height": "41px",
+        "left": 0,
+        "right": "",
+        "top": 0,
+        "width": "100vw",
+      }
+    }
+  >
+    <div
+      className="MuiBox-root MuiBox-root-182 makeStyles-color-179"
+      id="background"
+      style={
+        Object {
+          "backgroundColor": "#016976",
+          "opacity": 0.5,
+        }
+      }
+    />
+    <div
+      className="MuiBox-root MuiBox-root-183 makeStyles-item-180"
+      id="content-box"
+      style={Object {}}
+    >
+      <div
+        className="MuiBox-root MuiBox-root-184"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-text"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            I am up button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-217 makeStyles-layout-178"
+    id="container"
+    style={
+      Object {
+        "bottom": "",
+        "height": "419px",
+        "left": 0,
+        "right": "",
+        "top": "calc(50vh - 210px)",
+        "width": "60px",
+      }
+    }
+  >
+    <div
+      className="MuiBox-root MuiBox-root-218 makeStyles-color-179"
+      id="background"
+      style={
+        Object {
+          "backgroundColor": "#016976",
+          "opacity": 0.5,
+        }
+      }
+    />
+    <div
+      className="MuiBox-root MuiBox-root-219 makeStyles-item-180"
+      id="content-box"
+      style={Object {}}
+    >
+      <div
+        className="MuiGrid-root makeStyles-root-220 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-324"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <div
+                className="MuiBox-root MuiBox-root-325"
+              >
+                <img
+                  height="19"
+                  src="sensors-move@2x.png"
+                  width="19"
+                />
+              </div>
+            </span>
+          </button>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-326"
+        >
+          <img
+            height={25}
+            src="adding-copy-shape-3@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-327"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <div
+                className="MuiBox-root MuiBox-root-328"
+              >
+                <img
+                  height={25}
+                  src="display-copy-shape-2@2x.png"
+                  width={25}
+                />
+              </div>
+            </span>
+          </button>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-329"
+        >
+          <img
+            height={25}
+            src="movement-path-4333-shape-1@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-330"
+        >
+          <img
+            height={25}
+            src="side-menu-shape-copy-2@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-331"
+        >
+          <img
+            height={25}
+            src="side-menu-shape-copy-2@2x.png"
+            width={25}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-332"
+  />
+  <div
+    className="MuiBox-root MuiBox-root-333 makeStyles-layout-178"
+    id="container"
+    style={
+      Object {
+        "bottom": "",
+        "height": "419px",
+        "left": "",
+        "right": 0,
+        "top": "calc(50vh - 210px)",
+        "width": "60px",
+      }
+    }
+  >
+    <div
+      className="MuiBox-root MuiBox-root-334 makeStyles-color-179"
+      id="background"
+      style={
+        Object {
+          "backgroundColor": "#016976",
+          "opacity": 0.5,
+        }
+      }
+    />
+    <div
+      className="MuiBox-root MuiBox-root-335 makeStyles-item-180"
+      id="content-box"
+      style={Object {}}
+    >
+      <div
+        className="MuiGrid-root makeStyles-root-220 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-336"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <div
+                className="MuiBox-root MuiBox-root-337"
+              >
+                <img
+                  height="19"
+                  src="sensors-move@2x.png"
+                  width="19"
+                />
+              </div>
+            </span>
+          </button>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-338"
+        >
+          <img
+            height={25}
+            src="adding-copy-shape-3@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-339"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <div
+                className="MuiBox-root MuiBox-root-340"
+              >
+                <img
+                  height={25}
+                  src="display-copy-shape-2@2x.png"
+                  width={25}
+                />
+              </div>
+            </span>
+          </button>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-341"
+        >
+          <img
+            height={25}
+            src="movement-path-4333-shape-1@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-342"
+        >
+          <img
+            height={25}
+            src="side-menu-shape-copy-2@2x.png"
+            width={25}
+          />
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-343"
+        >
+          <img
+            height={25}
+            src="side-menu-shape-copy-2@2x.png"
+            width={25}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-344"
+  />
+  <div
+    className="MuiBox-root MuiBox-root-345 makeStyles-layout-178"
+    id="container"
+    style={
+      Object {
+        "bottom": 0,
+        "height": "41",
+        "left": 0,
+        "right": "",
+        "top": "",
+        "width": "100vw",
+      }
+    }
+  >
+    <div
+      className="MuiBox-root MuiBox-root-346 makeStyles-color-179"
+      id="background"
+      style={
+        Object {
+          "backgroundColor": "#016976",
+          "opacity": 0.5,
+        }
+      }
+    />
+    <div
+      className="MuiBox-root MuiBox-root-347 makeStyles-item-180"
+      id="content-box"
+      style={Object {}}
+    >
+      <div
+        className="MuiBox-root MuiBox-root-348"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-text"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            I am DownBar button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

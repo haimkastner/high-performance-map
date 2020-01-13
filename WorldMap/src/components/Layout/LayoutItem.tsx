@@ -73,12 +73,12 @@ export function LayoutItem(props: Props) {
   };
 
   return (
-    <Box className={classes.layout} style={layoutStyle}>
+    <Box id="container" className={classes.layout} style={layoutStyle}>
       {/** The complete new layer */}
       {/** The color of the layout background */}
-      <Box className={classes.color} style={colorStyle} />
+      <Box id="background" className={classes.color} style={colorStyle} />
       {/** The children components of the layer */}
-      <Box className={classes.item} style={itemStyle}>
+      <Box id="content-box" className={classes.item} style={itemStyle}>
         {props.children}
       </Box>
     </Box>
