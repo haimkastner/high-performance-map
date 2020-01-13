@@ -1,24 +1,13 @@
-import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import { Bars } from "./Layout/Bars";
-import { SeamMap } from "./Map/SeamMap";
-
-/**
- * to customize design for ui components in the future.
- */
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    layout: { }
-  })
-);
+import Box from '@material-ui/core/Box';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import React from 'react';
+import { Bars } from './Layout/Bars';
+import { SeamMap } from './Map/SeamMap';
 
 /**
  * @returns the whole UI we have, including all layers.
  */
 export default function Dashboard() {
-  const classes = useStyles();
-
   return (
     <Box>
       <Bars />

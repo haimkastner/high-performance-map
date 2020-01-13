@@ -1,5 +1,5 @@
-import axios from 'axios';
 import * as mqttapi from 'async-mqtt';
+import axios from 'axios';
 import { BehaviorSubject } from 'rxjs';
 import { Platform } from '../models/models';
 
@@ -13,21 +13,21 @@ const mqttClient = mqttapi.connect(MQTT_BROKER_URL);
 
 // Subscribe to 'onConnect' event, then subscribe to the platforms update topic
 mqttClient.on('connect', async () => {
-    await mqttClient.subscribe(PLATFORMS_TOPIC);
+  await mqttClient.subscribe(PLATFORMS_TOPIC);
 });
 
 // Subscribe to 'onMessage' event, then publish the new platfroms to all subscribers
 mqttClient.on('message', async (topic: string, payload: any) => {
-
-    try {
-        if (topic === PLATFORMS_TOPIC) {
-            // convert payload to a valid platfroms array 
-            const platforms: Platform[] = JSON.parse(payload.toString('utf8'));
-            platformsFeed.next(platforms);
-        }
-    } catch (error) {
-        console.warn(`Converting ${topic} payload failed, ${error}`);
+  try {
+    if (topic === PLATFORMS_TOPIC) {
+      // convert payload to a valid platfroms array
+      const platforms: Platform[] = JSON.parse(payload.toString('utf8'));
+      platformsFeed.next(platforms);
     }
+  } catch (error) {
+    // tslint:disable-next-line: no-console
+    console.warn(`Converting ${topic} payload failed, ${error}`);
+  }
 });
 
 /**
@@ -40,10 +40,11 @@ export const platformsFeed = new BehaviorSubject<Platform[]>([]);
  * An exapmle of fetching data from an HTTP server.
  */
 export async function fetchData(): Promise<void> {
-    try {
-        await axios.get(`${PUBLIC_HTTP_API_URL}/data`, { withCredentials: true });
-    } catch (error) {
-        console.warn('fetch data fail ' + (error || ''));
-        throw new Error('fetch data fail');
-    }
+  try {
+    await axios.get(`${PUBLIC_HTTP_API_URL}/data`, { withCredentials: true });
+  } catch (error) {
+    // tslint:disable-next-line: no-console
+    console.warn('fetch data fail ' + (error || ''));
+    throw new Error('fetch data fail');
+  }
 }

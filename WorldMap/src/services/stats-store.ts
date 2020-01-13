@@ -2,51 +2,47 @@ import PubSub from 'pubsub-js';
 
 const dataStor = PubSub;
 
-const currentState: { [key: string]: any } = {
-
-}
+const currentState: { [key: string]: any } = {};
 
 export function subscribeState(state: string, component: React.Component): any {
-    const currState = getCurrentState(state);
-    if (currState !== undefined) {
-        // First update the current state
-        const newState: { [key: string]: string } = {};
-        newState[state] = currState;
-        component.setState(newState);
-    }
+  const currState = getCurrentState(state);
+  if (currState !== undefined) {
+    // First update the current state
+    const newState: { [key: string]: string } = {};
+    newState[state] = currState;
+    component.setState(newState);
+  }
 
-
-    return dataStor.subscribe(state, (msg: any, data: string) => {
-        const newState: { [key: string]: string } = {};
-        newState[state] = data;
-        component.setState(newState);
-    });
+  return dataStor.subscribe(state, (msg: any, data: string) => {
+    const newState: { [key: string]: string } = {};
+    newState[state] = data;
+    component.setState(newState);
+  });
 }
 
 export function subscribeHookState(state: string, hook: React.Dispatch<React.SetStateAction<any>>): any {
-    const currState = getCurrentState(state);
-    if (currState !== undefined) {
-        // First update the current state
-        hook(currState);
-    }
+  const currState = getCurrentState(state);
+  if (currState !== undefined) {
+    // First update the current state
+    hook(currState);
+  }
 
-
-    return dataStor.subscribe(state, (msg: any, data: string) => {
-        hook(data);
-    });
+  return dataStor.subscribe(state, (msg: any, data: string) => {
+    hook(data);
+  });
 }
 
 export function unsubscribeState(token: string): any {
-    dataStor.unsubscribe(token);
+  dataStor.unsubscribe(token);
 }
 
 export function setSharedState(state: string, data: any): any {
-    currentState[state] = data;
-    dataStor.publish(state, data);
+  currentState[state] = data;
+  dataStor.publish(state, data);
 }
 
 export function getCurrentState(state: string): any {
-    return currentState[state];
+  return currentState[state];
 }
 
 export const storPubSub = dataStor;

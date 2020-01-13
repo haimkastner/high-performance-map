@@ -1,48 +1,41 @@
-import React from "react";
-import {
-  Map,
-  TileLayer,
-  ImageOverlay,
-  Marker,
-  Circle,
-  Rectangle
-} from "react-leaflet";
-import { Platform } from "../../models/models";
-import { platformsFeed } from "../../services/data-service";
-import Entity from "./Entity";
+// Import Leaflet style
+import 'leaflet/dist/leaflet.css';
+import React from 'react';
+import { ImageOverlay, Map, TileLayer } from 'react-leaflet';
+import { Platform } from '../../models/models';
+import { platformsFeed } from '../../services/data-service';
+import { setSharedState, subscribeState, unsubscribeState } from '../../services/stats-store';
+import Entity from './Entity';
 import {
   mapAsBase64,
   mapBottomBound,
-  mapTopBound,
-  mapRightBound,
-  mapLeftBound,
   mapLatitudeCenter,
-  mapLongitudeCenter
-} from "./raw-map";
-// Import Leaflet style
-import "leaflet/dist/leaflet.css";
-import { subscribeState, unsubscribeState, setSharedState } from "../../services/stats-store";
+  mapLeftBound,
+  mapLongitudeCenter,
+  mapRightBound,
+  mapTopBound,
+} from './raw-map';
 
 // Declare the component states
 interface State {
   platforms: Platform[];
-  selectedPlatform : Platform | null;
+  selectedPlatform: Platform | null;
 }
 
 class PerformanceMap extends React.Component<any, State> {
-  state: State = {
+  public state: State = {
     platforms: [],
-    selectedPlatform : null
+    selectedPlatform: null,
   };
 
-  selectedPlatformToken : any;
-  
-  componentWillUnmount() {
+  public selectedPlatformToken: any;
+
+  public componentWillUnmount() {
     unsubscribeState(this.selectedPlatformToken);
   }
 
-  componentDidMount() {
-    this.selectedPlatformToken = subscribeState("selectedPlatform", this);
+  public componentDidMount() {
+    this.selectedPlatformToken = subscribeState('selectedPlatform', this);
 
     platformsFeed.subscribe(newPlatforms => {
       // Clean up the platform array
@@ -50,8 +43,7 @@ class PerformanceMap extends React.Component<any, State> {
 
       // Add each platform to the array
       for (const p of newPlatforms) {
-
-        if(this.state.selectedPlatform && p.ID === this.state.selectedPlatform.ID){
+        if (this.state.selectedPlatform && p.ID === this.state.selectedPlatform.ID) {
           setSharedState('selectedPlatform', p);
         }
         this.state.platforms.push(p);
@@ -59,12 +51,12 @@ class PerformanceMap extends React.Component<any, State> {
 
       // Set the new platforms state
       this.setState({
-        platforms: this.state.platforms
+        platforms: this.state.platforms,
       });
     });
   }
 
-  render() {
+  public render() {
     return (
       <Map
         center={[mapLatitudeCenter, mapLongitudeCenter]}
@@ -76,7 +68,7 @@ class PerformanceMap extends React.Component<any, State> {
         dragging={true}
         animate={true}
         easeLinearity={0.35}
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: '100vw', height: '100vh' }}
       >
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
         {this.state.platforms.map((platform, i) => (
@@ -85,7 +77,7 @@ class PerformanceMap extends React.Component<any, State> {
         <ImageOverlay
           bounds={[
             [mapTopBound, mapLeftBound],
-            [mapBottomBound, mapRightBound]
+            [mapBottomBound, mapRightBound],
           ]}
           url={mapAsBase64}
         ></ImageOverlay>

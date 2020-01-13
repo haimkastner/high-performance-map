@@ -1,13 +1,14 @@
-import React from 'react';
-import styles from './SeamMap.module.css';
 import Box from '@material-ui/core/Box';
-import PerformanceMap from "./PerformanceMap";
+import React from 'react';
+import PerformanceMap from './PerformanceMap';
+import styles from './SeamMap.module.css';
 
 export class SeamMap extends React.Component {
-
-    render() {
-        return (<Box className={styles.SeamMap}>
-            <PerformanceMap/>
-        </Box>);
-    }
+  public render() {
+    return (
+      <Box className={styles.SeamMap}>
+        <PerformanceMap />
+      </Box>
+    );
+  }
 }

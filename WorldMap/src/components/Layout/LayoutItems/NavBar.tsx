@@ -1,148 +1,82 @@
-import React from "react";
-import { Box, Grid, TextField, MenuItem } from "@material-ui/core";
-import { NavBarItem } from "../../Content/NavBar/NavBarItem";
-import { Platform } from "../../../models/models";
-import { subscribeState, unsubscribeState } from "../../../services/stats-store";
+import { Grid } from '@material-ui/core';
+import React from 'react';
+import { Platform } from '../../../models/models';
+import { subscribeState, unsubscribeState } from '../../../services/stats-store';
+import { NavBarItem } from '../../Content/NavBar/NavBarItem';
 
 interface GridProps {
-  direction: "row-reverse" | "row" | "column" | "column-reverse" | undefined;
-  justify:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "space-between"
-    | "space-around"
-    | "space-evenly"
-    | undefined;
-  alignItems:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "stretch"
-    | "baseline"
-    | undefined;
+  direction: 'row-reverse' | 'row' | 'column' | 'column-reverse' | undefined;
+  justify: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly' | undefined;
+  alignItems: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline' | undefined;
 }
 
 interface State {
   selectedPlatform: Platform;
 }
 export class NavBar extends React.Component<any, State> {
-  //  speedType = [
-  //   {
-  //     value: 'קשר',
-  //     label: 'קשר',
-  //   },
-  //   {
-  //     value: 'מייל',
-  //     label: 'מייל',
-  //   },
-  //   {
-  //     value: 'קסטנר',
-  //     label: 'קסטנר',
-  //   },
-  // ];
-
-  // constructor(props : any) {
-  //   super(props);
-  //   this.speedType = [{
-  //     value: 'קשר',
-  //     label: 'קשר',
-  //   }]
-  //     };
-
-
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   this.setState({speedType: this.speedType.values[1]});
-  // }
-  state: State = {
+  public state: State = {
     selectedPlatform: {
       ID: -1,
-      Name: "unknown",
-      PlatformType: "Aircraft",
+      Name: 'unknown',
+      PlatformType: 'Aircraft',
       Spacial: {
         Movement: {
           Course: NaN,
-          Speed: NaN
+          Speed: NaN,
         },
         Position: {
           Altitude: NaN,
           Latitude: NaN,
-          Longitude: NaN
-        }
-      }
-    }
+          Longitude: NaN,
+        },
+      },
+    },
   };
 
-  selectedPlatformToken : any;
-  componentDidMount() {
-    this.selectedPlatformToken = subscribeState("selectedPlatform", this);
+  public selectedPlatformToken: any;
+
+  public navItemHeight = '42px';
+  public navItemsPaddingFactor = 10;
+
+  public navDirectionWidth = 100;
+  public navSpeedWidth = 132;
+  public navOwnshipDirectionWidth = 120;
+  public navOwnshipRangeWidth = 159;
+  public navAltitudeWidth = 161;
+  public navSettingsWidth = 120;
+
+  public baseGridStyle = {
+    height: '100%',
+    width: '100%',
+  };
+
+  public firstGridStyle = {
+    width: this.navDirectionWidth + this.navItemsPaddingFactor + this.navSpeedWidth,
+  };
+
+  public secondGridStyle = {
+    width: this.navOwnshipDirectionWidth + this.navItemsPaddingFactor + this.navOwnshipRangeWidth,
+  };
+
+  public thirdGridStyle = {
+    width: this.navAltitudeWidth + this.navItemsPaddingFactor + this.navSettingsWidth,
+  };
+
+  public rowGridProps: GridProps = {
+    alignItems: undefined,
+    direction: 'row-reverse',
+    justify: 'space-between',
+  };
+  public componentDidMount() {
+    this.selectedPlatformToken = subscribeState('selectedPlatform', this);
   }
-  componentWillUnmount() {
+  public componentWillUnmount() {
     unsubscribeState(this.selectedPlatformToken);
   }
-  
-  navItemHeight = "42px";
-  navItemsPaddingFactor = 10;
 
-  navDirectionWidth = 100;
-  navSpeedWidth = 132;
-  navOwnshipDirectionWidth = 120;
-  navOwnshipRangeWidth = 159;
-  navAltitudeWidth = 161;
-  navSettingsWidth = 120;
-
-  baseGridStyle = {
-    width: "100%",
-    height: "100%"
-  };
-
-  firstGridStyle = {
-    width:
-      this.navDirectionWidth + this.navItemsPaddingFactor + this.navSpeedWidth
-  };
-
-  secondGridStyle = {
-    width:
-      this.navOwnshipDirectionWidth +
-      this.navItemsPaddingFactor +
-      this.navOwnshipRangeWidth
-  };
-
-  thirdGridStyle = {
-    width:
-      this.navAltitudeWidth + this.navItemsPaddingFactor + this.navSettingsWidth
-  };
-
-  rowGridProps: GridProps = {
-    direction: "row-reverse",
-    justify: "space-between",
-    alignItems: undefined
-  };
-
-//   const textbox =   <TextField
-//   id="standard-select-currency"
-//   select
-//   label="Select"
-//   value={speedType}
-//   onChange={handleChange}
-//   helperText="Please select your currency"
-// >
-//   {/* {speedType.map(option => (
-//     <MenuItem key={option.value} value={option.value}>
-//       {option.label}
-//     </MenuItem>
-//   ))} */}
-//   </TextField>;
-
-  render() {
+  public render() {
     return (
-      <Grid
-        style={this.baseGridStyle}
-        container
-        direction="row-reverse"
-        justify="space-around"
-        alignItems="center"
-      >
+      <Grid style={this.baseGridStyle} container direction="row-reverse" justify="space-around" alignItems="center">
         <Grid
           style={this.firstGridStyle}
           container
@@ -150,7 +84,7 @@ export class NavBar extends React.Component<any, State> {
           justify={this.rowGridProps.justify}
         >
           <NavBarItem
-            name="כיוון הפלגה"
+            name="כיוון ההפלגה"
             value={this.state.selectedPlatform.Spacial.Position.Latitude}
             height={this.navItemHeight}
             width={this.navDirectionWidth}
@@ -196,12 +130,7 @@ export class NavBar extends React.Component<any, State> {
             height={this.navItemHeight}
             width={this.navAltitudeWidth}
           ></NavBarItem>
-          <NavBarItem
-            name="הגדרות"
-            value={'?'}
-            height={this.navItemHeight}
-            width={this.navSettingsWidth}
-          ></NavBarItem>
+          <NavBarItem name="הגדרות" value={'?'} height={this.navItemHeight} width={this.navSettingsWidth}></NavBarItem>
         </Grid>
       </Grid>
     );
