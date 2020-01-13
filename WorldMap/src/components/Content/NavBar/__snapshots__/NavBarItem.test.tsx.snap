@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBarItem Component matches the snapshot 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+  style={
+    Object {
+      "height": 3,
+      "width": 3,
+    }
+  }
+>
+  <p
+    className="MuiTypography-root makeStyles-navItemName-137 MuiTypography-body1"
+    id="name"
+  >
+    nav-bar-test
+  </p>
+  <p
+    className="MuiTypography-root makeStyles-navItemInput-136 MuiTypography-body1"
+    id="value"
+    style={
+      Object {
+        "height": 3,
+        "width": 3,
+      }
+    }
+  >
+    4
+  </p>
+</div>
+`;
