@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './SeamMap.module.css';
+import PerformanceMap from './PerformanceMap';
 import Box from '@material-ui/core/Box';
-import PerformanceMap from "./PerformanceMap";
-import { MenuProvider, Menu, Item, Separator, Submenu, theme, animation } from 'react-contexify';
+import { MenuProvider, Menu, Item, Separator, theme } from 'react-contexify';
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import 'react-contexify/dist/ReactContexify.min.css';
 

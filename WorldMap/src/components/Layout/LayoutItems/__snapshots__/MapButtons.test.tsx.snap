@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapButtons Component matches the snapshot 1`] = `
+<div
+  className="MuiGrid-root makeStyles-root-146 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+>
+  <div
+    className="MuiBox-root MuiBox-root-251"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-284"
+        >
+          <img
+            height="19"
+            src="sensors-move@2x.png"
+            width="19"
+          />
+        </div>
+      </span>
+    </button>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-285"
+  >
+    <img
+      height={25}
+      src="adding-copy-shape-3@2x.png"
+      width={25}
+    />
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-286"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-287"
+        >
+          <img
+            height={25}
+            src="display-copy-shape-2@2x.png"
+            width={25}
+          />
+        </div>
+      </span>
+    </button>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-288"
+  >
+    <img
+      height={25}
+      src="movement-path-4333-shape-1@2x.png"
+      width={25}
+    />
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-289"
+  >
+    <img
+      height={25}
+      src="side-menu-shape-copy-2@2x.png"
+      width={25}
+    />
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-290"
+  >
+    <img
+      height={25}
+      src="side-menu-shape-copy-2@2x.png"
+      width={25}
+    />
+  </div>
+</div>
+`;
