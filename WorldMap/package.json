@@ -12,8 +12,9 @@
     "start": "react-scripts start",
     "build": "npm run format && npm run lint && npm run cover && react-scripts build"
   },
+  "homepage" : "seamrun",
   "keywords": [],
-  "author": "",
+  "author": "Haim Kastner",
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.7.0",

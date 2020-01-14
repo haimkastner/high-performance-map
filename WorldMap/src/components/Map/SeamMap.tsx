@@ -11,7 +11,7 @@ function mockClickFunc(event: string) {
 }
 // create your menu first
 const MapContextMenu = () => (
-  <Menu id="menu_id" theme={theme.dark}>
+  <Menu id="map-context-menu" theme={theme.dark}>
     <Item
       onClick={() => {
         mockClickFunc('add');
@@ -64,12 +64,12 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-export function SeamMap() {
+export default function SeamMap() {
   const classes = useStyles();
 
   return (
     <Box>
-      <MenuProvider id="menu_id" className={classes.contextMenu}>
+      <MenuProvider id="map-context-menu" className={classes.contextMenu}>
         <Box className={classes.map}>
           <PerformanceMap />
         </Box>

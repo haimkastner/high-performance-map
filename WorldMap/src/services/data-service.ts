@@ -16,11 +16,11 @@ mqttClient.on('connect', async () => {
   await mqttClient.subscribe(PLATFORMS_TOPIC);
 });
 
-// Subscribe to 'onMessage' event, then publish the new platfroms to all subscribers
+// Subscribe to 'onMessage' event, then publish the new platforms to all subscribers
 mqttClient.on('message', async (topic: string, payload: any) => {
   try {
     if (topic === PLATFORMS_TOPIC) {
-      // convert payload to a valid platfroms array
+      // convert payload to a valid platforms array
       const platforms: Platform[] = JSON.parse(payload.toString('utf8'));
       platformsFeed.next(platforms);
     }
@@ -31,13 +31,13 @@ mqttClient.on('message', async (topic: string, payload: any) => {
 });
 
 /**
- * Platfroms feed.
- * Subscribe to get the update about platfroms.
+ * Platforms feed.
+ * Subscribe to get the update about platforms.
  */
 export const platformsFeed = new BehaviorSubject<Platform[]>([]);
 
 /**
- * An exapmle of fetching data from an HTTP server.
+ * An example of fetching data from an HTTP server.
  */
 export async function fetchData(): Promise<void> {
   try {
