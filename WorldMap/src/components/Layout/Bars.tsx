@@ -1,6 +1,7 @@
 import Box from '@material-ui/core/Box';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React, { useEffect, useState } from 'react';
+import { ScreenPosition } from '../../models/models';
 import { subscribeHookState } from '../../services/stats-store';
 import { LayoutItem } from './LayoutItem';
 import { DownBar, MapButtons, NavBar, UpBar } from './LayoutItems';
@@ -27,11 +28,15 @@ export function Bars() {
   const [mapButtonsMenuCenterDis, setMapButtonsMenuCenterDis] = useState('calc(50vh - 210px)');
   const [showMapButtonsMenu, setShowMapButtonsMenu] = useState(false);
   const [showNavBar, setShowNavBar] = useState(false);
+  const [showPlatformMenu, setShowPlatformMenu] = useState(false);
+  const [selectedPlatformPosition, setSelectedPlatformPosition] = useState<ScreenPosition>({ x: 0, y: 0 });
 
   useEffect(() => {
     subscribeHookState('mapButtonsMenuCenterDis', setMapButtonsMenuCenterDis);
     subscribeHookState('showMapButtonsMenu', setShowMapButtonsMenu);
     subscribeHookState('showNavBar', setShowNavBar);
+    subscribeHookState('showPlatformMenu', setShowPlatformMenu);
+    subscribeHookState('selectedPlatformPosition', setSelectedPlatformPosition);
   }, []);
 
   return (
@@ -52,6 +57,20 @@ export function Bars() {
           top={`calc(50vh + ${mapButtonsMenuCenterDis}px)`}
         >
           <MapButtonsMenu></MapButtonsMenu>
+        </LayoutItem>
+      ) : (
+        <Box />
+      )}
+      {showPlatformMenu ? (
+        <LayoutItem
+          opacity={0.5}
+          color={'gray'}
+          top={`calc(${selectedPlatformPosition.y}px - 100px)`}
+          left={`calc(${selectedPlatformPosition.x}px - 100px)`}
+          height={'200px'}
+          width={'200px'}
+        >
+          <Box> This is the platform menu </Box>
         </LayoutItem>
       ) : (
         <Box />

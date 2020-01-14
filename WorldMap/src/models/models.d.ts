@@ -27,3 +27,7 @@ export interface Platform {
   PlatformType: PlatformType;
   Spacial: Spacial;
 }
+export interface ScreenPosition {
+  x: number;
+  y: number;
+}

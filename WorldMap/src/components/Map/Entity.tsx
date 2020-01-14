@@ -1,6 +1,6 @@
 import React from 'react';
 import { Circle, Popup } from 'react-leaflet';
-import { Platform } from '../../models/models';
+import { Platform, ScreenPosition } from '../../models/models';
 import { setSharedState } from '../../services/stats-store';
 
 // Declare the component properties
@@ -9,15 +9,20 @@ interface Props {
 }
 
 class Entity extends React.Component<Props> {
-  public onPlatfromSelected = () => {
+  public onPlatformSelected = (mouseClickEvent: { originalEvent: MouseEvent; containerPoint: ScreenPosition }) => {
     setSharedState('selectedPlatform', this.props.platform);
+    setSharedState('showPlatformMenu', true);
+    setSharedState('selectedPlatformPosition', {
+      x: mouseClickEvent.containerPoint.x,
+      y: mouseClickEvent.containerPoint.y,
+    } as ScreenPosition);
   };
 
   public render() {
     return (
       // Draw the entity on the map
       <Circle
-        onClick={this.onPlatfromSelected}
+        onClick={this.onPlatformSelected}
         color={this.props.platform.PlatformType === 'Aircraft' ? '#e81a53' : '#1a92e8'}
         center={[this.props.platform.Spacial.Position.Latitude, this.props.platform.Spacial.Position.Longitude]}
         radius={250}

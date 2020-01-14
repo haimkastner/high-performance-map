@@ -13,7 +13,7 @@ export function subscribeState(state: string, component: React.Component): any {
     component.setState(newState);
   }
 
-  return dataStor.subscribe(state, (msg: any, data: string) => {
+  return dataStor.subscribe(state, (msg: any, data: any) => {
     const newState: { [key: string]: string } = {};
     newState[state] = data;
     component.setState(newState);
@@ -27,7 +27,7 @@ export function subscribeHookState(state: string, hook: React.Dispatch<React.Set
     hook(currState);
   }
 
-  return dataStor.subscribe(state, (msg: any, data: string) => {
+  return dataStor.subscribe(state, (msg: any, data: any) => {
     hook(data);
   });
 }

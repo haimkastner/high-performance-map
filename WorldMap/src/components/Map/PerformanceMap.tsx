@@ -1,10 +1,9 @@
-// Import Leaflet style
 import 'leaflet/dist/leaflet.css';
 import React from 'react';
-import { ImageOverlay, Map, TileLayer } from 'react-leaflet';
-import { Platform } from '../../models/models';
+import { ImageOverlay, Map, MapProps, TileLayer } from 'react-leaflet';
+import { Platform, ScreenPosition } from '../../models/models';
 import { platformsFeed } from '../../services/data-service';
-import { setSharedState, subscribeState, unsubscribeState } from '../../services/stats-store';
+import { setSharedState, storPubSub, subscribeState, unsubscribeState } from '../../services/stats-store';
 import Entity from './Entity';
 import {
   mapAsBase64,
@@ -29,12 +28,21 @@ class PerformanceMap extends React.Component<any, State> {
   };
 
   public selectedPlatformToken: any;
+  private leafletMap: any | null = null;
 
   public componentWillUnmount() {
     unsubscribeState(this.selectedPlatformToken);
   }
 
   public componentDidMount() {
+    storPubSub.subscribe('selectedPlatform', (msg: any, data: any) => {
+      const selectPlatform = data as Platform;
+      const p: ScreenPosition = this.leafletMap.latLngToContainerPoint([
+        selectPlatform.Spacial.Position.Latitude,
+        selectPlatform.Spacial.Position.Longitude,
+      ]);
+      setSharedState('selectedPlatformPosition', p);
+    });
     this.selectedPlatformToken = subscribeState('selectedPlatform', this);
 
     platformsFeed.subscribe(newPlatforms => {
@@ -59,6 +67,7 @@ class PerformanceMap extends React.Component<any, State> {
   public render() {
     return (
       <Map
+        ref={this.setLeafletMapRef}
         center={[mapLatitudeCenter, mapLongitudeCenter]}
         zoom={8}
         attributionControl={true}
@@ -84,6 +93,8 @@ class PerformanceMap extends React.Component<any, State> {
       </Map>
     );
   }
+
+  private setLeafletMapRef = (map: any) => (this.leafletMap = map && map.leafletElement);
 }
 
 export default PerformanceMap;
