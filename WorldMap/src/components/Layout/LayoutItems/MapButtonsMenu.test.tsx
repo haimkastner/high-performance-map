@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { MapButtonsMenu} from './MapButtonsMenu';
+import { MapButtonsMenu } from './MapButtonsMenu';
 
 describe('MapButtonsMenu Component', () => {
   it('renders without crashing', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { SideMenu} from './SideMenu';
+import { SideMenu } from './SideMenu';
 
 describe('SideMenu Component', () => {
   it('renders without crashing', () => {
